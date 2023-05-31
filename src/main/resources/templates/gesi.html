@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구칭구</title>
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    <style>
+        .all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+            width:100%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search {
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 검색 입력창 */
+        .search input[type="text"] {
+            width: 450px; /* 검색창의 너비를 조정 */
+            padding: 10px;
+            border: border box;
+            height: 30px;
+
+            border: 1px solid #6A6A6A;
+            border-radius: 5px;
+
+            outline: none;
+            font-size: 17.5px;
+        }
+
+        /* 검색 버튼 */
+        .search button[type="submit"] {
+            width:70px;
+            height: 50px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* 반응형 완성 */
+        .topnav-right {
+            position: absolute;
+            top: 9.5px;
+            right: 42.3px;
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .topnav-right a {
+            margin: 4px;
+            font-size: 11.5pt;
+            color: #888787;
+            text-decoration: none;
+        }
+        .post {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #cdcdcd;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .post .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .post .content {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>제목</title>
+    <style>
+
+        header {
+            height: 100px; /* header 높이 고정 */
+            position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .post {
+            margin-top: 20px; /* header 높이 + margin 만큼 post 들을 아래로 밀어줌 */
+            position: relative; /* post 내부 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .post-meta {
+            position: absolute; /* post 내부 요소의 위치를 상대적으로 지정하기 위해 설정 */
+            bottom: 0; /* post 내부 요소를 post의 하단에 위치시키기 위해 설정 */
+            right: 0; /* post 내부 요소를 post의 오른쪽에 위치시키기 위해 설정 */
+            display: flex; /* post 내부 요소를 가로 방향으로 정렬하기 위해 설정 */
+            flex-direction: row-reverse; /* post 내부 요소를 가로 방향으로 반전시켜서 오른쪽에 위치시키기 위해 설정 */
+        }
+
+        .join-button {
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 10px; /*동그랗게*/
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        span {
+            font-size: smaller;
+            color: blue;
+        }
+        .favorite-button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            background-color: transparent;
+            cursor: pointer;
+        }/*여보세요? 자스에요 자바 스크립트
+function toggleFavorite() {
+  const favoriteButton = document.querySelector('.favorite-button');
+  favoriteButton.classList.toggle('filled');
+}
+*/
+
+        .favorite-button.filled {
+            background-color: #000000;
+        }
+        @media (max-width: 768px) {
+            /* Styles for screens larger than 768px */
+            .all{
+                width:auto;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:auto;
+                margin:auto;
+            }
+
+
+
+            .searchclass {
+
+                zoom:59%;
+            }
+            img{
+                display:none;
+
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+            .all{
+                width:1000px;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:1400px;
+                margin: 0 auto;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="all">
+
+    <header>
+        <div class=imgclass>
+            <a href="home">
+                <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+            </a>
+        </div>
+        <div class="searchclass">
+            <div class="search">
+                <form method="get" th:action="@{/gesi}">
+                <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요.">
+                <button type="submit">검색</button>
+                </form>
+
+            </div>
+
+            <div class="topnav-right">
+                <a href="/gongi">공지사항</a>
+                <a href="/gesizak">글쓰기</a>
+                <a href="/mypage">마이페이지</a>
+                <a href="/logout" onclick="showAlert()">로그아웃</a>
+                <script>
+                    function showAlert() {
+                        alert("로그아웃 되었습니다.");
+                    }
+                </script>
+
+            </div>
+        </div>
+    </header>
+    <div class="post" th:each="board: ${boardList}">
+
+    <div class="post">
+        <span id="post1" th:text="${board.member.nickname}"></span>
+        <button class="favorite-button"></button>
+        <h2 class="title">
+            <a>
+                제목: <span th:text="${board.title}"></span>
+            </a>
+        </h2>        <p class="content" th:text="'내용:' + ${board.content}"></p>
+
+        <div class="post-meta">
+            <a th:href="@{/view(id=${board.id})}">
+                <button class="join-button">상세보기</button>
+            </a>
+            <p class="time" th:text="${board.date}"></p>
+        </div>
+
+    </div>
+
+</div>
+</div>
+</body>
+<a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
+
+</html>
+
+</html>

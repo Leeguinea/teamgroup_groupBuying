@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공구칭구</title>
+
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script>
+        //변수담기
+        function check(){
+            var id = document.getElementById("id");
+            var nickname = document.getElementById("nickname");
+            var pwd = document.getElementById("pwd");
+            var name = document.getElementById("name");
+            var phone1 = document.getElementById("phone1");
+            var phone2 = document.getElementById("phone2");
+            var phone3 = document.getElementById("phone3");
+            var year = document.getElementById("year");
+            var selectBox = document.getElementById("month");
+            var day = document.getElementById("day");
+
+
+//공백검사
+            if(id.value==""){
+                alert("아이디를 입력하세요.");
+                id.focus(); //커서이동
+                return false;
+            }
+
+            if(nickname.value==""){
+                alert("닉네임을 입력하세요.");
+                nickname.focus(); //커서이동
+                return false;
+            }
+
+            if(pwd.value==""){
+                alert("비밀번호를 입력하세요.");
+                pwd.focus(); //커서이동
+                return false;
+            }
+
+            if(name.value==""){
+                alert("이름을 입력하세요.");
+                name.focus(); //커서이동
+                return false;
+            }
+
+            if(phone1.value==""){
+                alert("전화번호를 입력하세요.");
+                phone1.focus(); //커서이동
+                return false;
+            }
+
+            if(phone2.value==""){
+                alert("전화번호를 입력하세요.");
+                phone2.focus(); //커서이동
+                return false;
+            }
+
+            if(phone3.value==""){
+                alert("전화번호를 입력하세요.");
+                phone3.focus(); //커서이동
+                return false;
+            }
+
+            if(year.value==""){
+                alert("년도를 입력하세요.");
+                year.focus(); //커서이동
+                return false;
+            }
+
+
+            if(selectBox.value==""){
+                alert("월을 선택하세요.");
+                selectBox.focus(); //커서이동
+                return false;
+            }
+
+
+
+            if(day.value==""){
+                alert("일을 입력하세요.");
+                day.focus(); //커서이동
+                return false;
+            }
+
+
+//아이디 규정
+            var idCheck = /^[a-zA-z0-9]{4,12}$/;
+            if(!idCheck.test(id.value)){
+                alert("아이디는 영문 대소문자와 숫자 4~12자 이내로 입력해야합니다.");
+                id.focus();
+                return false;
+            }
+
+//비밀번호 규정
+            var pwdCheck = /^[a-zA-z0-9]{8,16}$/;
+            if(!pwdCheck.test(pwd.value)){
+                alert("비밀번호는 영문 대소문자와 숫자 8~16자 이내로 입력해야합니다.");
+                pwd.focus();
+                return false;
+            }
+
+            else{
+                alert("가입이 완료되었습니다.");
+            }
+
+//입력 값 전송(submit)
+            document.join.submit();
+
+        }
+
+
+    </script>
+
+    <style>
+
+        /*모바일 반응형*/
+        @media screen and (max-width:767px){
+
+            .all,.imgclass{
+                zoom:70%;
+                margin: 0 auto;
+
+
+            }
+
+        }
+
+        /*모든요소 중앙배열*/
+        .all{
+            width:1200px;
+            margin: 0 auto;
+
+        }
+
+        /*이미지 중앙배열*/
+        .imgclass{
+            width:1200px;
+            margin: 0 auto;
+        }
+
+
+        /*전체 비율수정*/
+        body{
+            zoom:67%;
+        }
+        img {
+            margin: auto;
+            display: block;
+            width: 500px;
+            height: 500px;
+
+            position: relative;
+            bottom: 150px;
+        }
+        /*수정/
+
+
+        /*아이디 입력창*/
+        .c1 {
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom: 300px;
+
+            margin: auto;
+            display: block;
+        }
+
+        .c2{
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom:435px;
+        }
+
+        .c3{
+
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom:460px;
+        }
+
+        .nickname{
+            position: relative;
+            bottom:35px;
+        }
+
+
+        /*비밀번호 입력창*/
+        .pwd{
+            position: relative;
+            bottom:70px;
+        }
+
+        .name{
+            position: relative;
+            bottom:105px;
+        }
+
+
+
+
+
+
+        /*아이디 입력박스 크기조정*/
+        input[type="text"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+        }
+
+        /*비밀번호 입력박스 크기조정*/
+
+        input[type="password"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+        }
+
+        /*휴대폰번호 입력박스 크기조정*/
+        input[type="number"]{
+            width: 200px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+
+        }
+        /*입력박스 안 안내문구*/
+        input::placeholder {
+            font-size: 23pt;
+        }
+
+
+        /*가입하기 버튼*/
+        .btn2{
+            width: 720px;
+            height: 80px;
+            margin: auto;
+            display: block;
+
+            font-size:30pt;
+            color:white;
+            background-color:#FDCE50;
+            font-weight: bold;
+
+            position: relative;
+            bottom:300px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<!-- 회원가입시 작성한 데이터는 controller 서버로 요청이 가야한다. 서비스 클래스로 정보가 넘어가야 한다.-->
+<!-- Post 방식으로 회원 컨트롤러 클래스로 데이터 전송 : 서버로 데이터를 전송하는 방식 -->
+<div>
+    <form action="/GroupBuying/join" method="post" onsubmit="return checkUserId();">
+
+
+        <!--이미지 클릭시 메인 페이지 이동-->
+        <a href="home">
+            <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+
+        </a>
+        <form method="post">
+            <div class="c1">
+                <div class="id">
+                    <p>아이디</p>
+                    <input
+                            type="text" name="id" class="id" stlye="width: 694px; height: 40px;" placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능 ."
+                            id = "id" onkeyup="idCheck()">
+                    <p id="check-result" style="font-size: 40px;"></p>
+
+
+                </div>
+
+                <div class="nickname">
+                    <p>닉네임</p>
+                    <input type="text" name="nickname" />
+                </div>
+
+                <div class="pwd">
+                    <p>비밀번호</p>
+                    <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/>
+                </div>
+
+                <div class="name">
+                    <p>이름</p>
+                    <input type="text" name="name"/>
+                </div>
+            </div>
+
+            <div class="c2">
+                <p>전화번호</p>
+                <input
+                        id="phone1"
+                        type="number"
+                        size="3"
+                        maxlength="3"
+                        oninput="changePhone1()"
+                        placeholder="010"
+                        name="phone1"
+                />
+                -
+                <input
+                        id="phone2"
+                        name="phone2"
+                        type="number"
+                        size="3"
+                        maxlength="4"
+                        oninput="changePhone2()"
+                />
+                -
+                <input
+                        id="phone3"
+                        name="phone3"
+                        type="number"
+                        size="3"
+                        maxlength="4"
+                        oninput="changePhone3()"
+                />
+            </div>
+
+            <div class="c3">
+                <p>생년월일</p>
+                <div>
+                    <input type="number" name="year" style="position: relative; right:35px;" placeholder="년(4자리)" />
+                    <select style="width:210px; height:45px; position:relative; bottom:33px; font-size:30pt" name="month" >
+                        <option value="">월</option>
+                        <option value="1월">1월</option>
+                        <option value="2월">2월</option>
+                        <option value="3월">3월</option>
+                        <option value="4월">4월</option>
+                        <option value="5월">5월</option>
+                        <option value="6월">6월</option>
+                        <option value="7월">7월</option>
+                        <option value="8월">8월</option>
+                        <option value="9월">9월</option>
+                        <option value="10월">10월</option>
+                        <option value="11월">11월</option>
+                        <option value="12월">12월</option>
+                    </select>
+                    <input type="number" name="day" style="position: relative; left:35px;" placeholder="일" />
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
+            </div>
+
+        </form>
+
+        <script>
+            function checkUserId() {
+                const id = document.getElementsByName("id");
+                const nickname = document.getElementsByName('nickname');
+                const pwd = document.getElementsByName('pwd');
+                const name = document.getElementsByName('name');
+                const phone1 = document.getElementsByName('phone1');
+                const phone2 = document.getElementsByName('phone2');
+                const phone3 = document.getElementsByName('phone3');
+                const year = document.getElementsByName('year');
+                const month = document.getElementsByName('month');
+                const day = document.getElementsByName('day');
+
+                if (!id) {
+                    alert('모든 입력란을 채워주세요!');
+                    return false;
+                }
+            }
+
+        </script>
+</body>
+<script th:inline="javascript">
+    const idCheck = () => {
+        const id = document.getElementById("id").value;
+        const checkResult = document.getElementById("check-result");
+        console.log("입력값: ", id);
+
+
+        //제이쿼리에서 제공해주는 에이작스 함수 --> 사용자가 입력한 데이터값 중에 id 값이 Controller로 가데 된다.
+        $.ajax({
+            // 요청방식 : post, url : "id-check", 데이터 : 아이디 값
+            type: "post",
+            url: "/GroupBuying/id-check",
+            data: {
+                "id" : id
+            },
+            success: function (res) {
+                console.log("요청성공", res);
+                if (res == "ok") {
+                    console.log("사용가능한 아이디");
+                    checkResult.style.color = "green";
+                    checkResult.innerHTML = "사용 가능한 아이디 입니다."
+                } else {
+                    console.log("이미 사용중인 아이디");
+                    checkResult.style.color = "red";
+                    checkResult.innerHTML = "이미 사용중인 아이디 입니다."
+                }
+            },
+            error: function (err) {
+                console.log("에러발생", err);
+            }
+        });
+    }
+</script>
+</html>

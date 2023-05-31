@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>공구칭구</title>
+  <!--탭 로고-->
+  <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+  <script>
+    function adjustScrollPosition() {
+      window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
+    }
+
+    <script>
+      function adjustScrollPosition() {
+      window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
+    }
+
+
+      function showAlert() {
+      alert("로그아웃 되었습니다.");
+    }
+
+  </script>
+
+
+  <style>
+
+    /*모바일 반응형*/
+    @media screen and (max-width:767px){
+
+      body{
+        zoom:50%;
+      }
+
+
+    }
+
+
+
+
+    /*모든요소 중앙배열*/
+    .all{
+      width:1400px;
+      margin: 0 auto;
+
+    }
+
+    .imgclass{
+      width:1400px;
+      margin: 0 auto;
+    }
+
+
+    /*오른쪽 불필요한 여백 제거*/
+    body {
+      padding-right: 0;
+      overflow-x: hidden;
+    }
+
+
+    img {
+      position: relative;
+      left: 0px;
+      bottom: 180px;
+    }
+
+    /*검색창*/
+    .search {
+      position: relative;
+      bottom: 460px;
+      left: 550px;
+
+      align-items: center;
+    }
+
+    /*검색창 사이즈*/
+    .search input[type="text"] {
+      width: 650px;
+      height: 52px;
+
+      padding: 10px;
+      border: 1px solid #6A6A6A;
+      border-radius: 5px;
+
+
+      font-size: 25px;
+
+
+
+    }
+
+    /* 검색 버튼 */
+    .btn1 {
+
+      background-color: #f7c111;
+      color: white;
+      border-radius: 5px;
+      border: none;
+
+      width:100px;
+      height: 70px;
+      font-size: 23px;
+
+      position: relative;
+      bottom: 530px;
+      left: 1250px;
+    }
+
+    h2 {
+      font-size: 45pt;
+
+      position: relative;
+      left: 150px;
+      bottom: 400px;
+    }
+
+    /*마이페이지 글씨*/
+    h3{
+      font-size: 34pt;
+      position: relative;
+      left: 88px;
+      bottom: 450px;
+
+
+    }
+
+
+    span {
+      position: relative;
+      left: 230px;
+      bottom: 455px;
+      font-size: 33pt;
+    }
+
+
+    /*나의 정보 표 제목*/
+
+    caption.information{
+      font-size: 25pt;
+      font-weight: bold;
+
+      position: relative;
+
+      right:400px;
+    }
+
+    /*나의 정보 표*/
+    table {
+
+      margin: 0 auto;/*표 가운데 정렬*/
+      border-collapse: collapse;
+      position: relative;
+      margin-top: 50px;
+      width: 1000px;
+      height: 400px;
+
+      margin-bottom: 60px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #c6c6c6;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      width:50px;
+
+
+    }
+
+    td{
+      width:250px;
+
+    }
+
+    /*내가 작성한 글 제목*/
+
+    caption.wirte{
+      font-size: 25pt;
+      font-weight: bold;
+
+      position: relative;
+      right:520px;
+      color: #000000;
+    }
+
+    /*내가 작성한 글 표*/
+    .sub_news,
+    .sub_news th,
+    .sub_news td {
+      border: 0;
+    }
+
+    /*게시글 제목 하이퍼링크 색상*/
+    .sub_news a {
+      color: #383838;
+      text-decoration: none;
+    }
+
+    .sub_news {
+      margin: 0 auto;
+      width: 100%;
+      border-bottom: 1px solid #999;
+      color: #666;
+      font-size: 12px;
+      table-layout: fixed;
+
+
+      position: relative;
+      left:200px;
+
+    }
+
+
+    .sub_news th {
+      padding: 5px 0 6px;
+      border-top: solid 1px #999;
+      border-bottom: solid 1px #b2b2b2;
+      background-color: #f1f1f4;
+      color: #333;
+      font-weight: bold;
+      line-height: 20px;
+      vertical-align: top;
+    }
+
+    .sub_news td {
+      padding: 8px 0 9px;
+      border-bottom: solid 1px #d2d2d2;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    /*게시글 날짜, 조회수*/
+    .sub_news .date,
+    .sub_news .hit {
+      padding: 0;
+      font-family: Tahoma;
+      font-size: 11px;
+      line-height: normal;
+    }
+
+    /*게시글 제목*/
+    .sub_news .title {
+      text-align: left;
+      padding-left: 130px;
+      font-size: 13px;
+
+
+
+    }
+    /*여백설정*/
+    .sub_news .title .pic,
+    .sub_news .title .new {
+      margin: 0 0 2px;
+      vertical-align: middle;
+    }
+
+    table{
+
+      position: relative;
+      bottom:500px;
+    }
+
+
+
+
+
+
+    /*개인정보 변경 버튼*/
+    .btn4 {
+      background-color: #f2f2f2;
+      color: black;
+      padding: 10px 20px;
+      border: 1px solid rgb(133, 133, 133);
+      border-radius: 3px;
+
+      position: relative;
+
+      bottom : 1020px;
+    }
+
+    /*회원탈퇴 버튼*/
+    .btn5 {
+      background-color: #ececec;
+      color: #000000;
+      padding: 10px 20px;
+      border: 1px solid rgb(133, 133, 133);
+      border-radius: 3px;
+
+
+
+      position: relative;
+
+      bottom: 1020px;
+    }
+
+    /*정보변경, 탈퇴 버튼 그룹*/
+    .buttons{
+      position: relative;
+      left: 990px;
+    }
+
+
+
+
+
+    .total{
+      position: relative;
+      bottom:110px;
+    }
+
+    /*상단 마이페이지 버튼*/
+    .btn8{
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom:640px;
+
+
+    }
+
+    /*상단 로그아웃 버튼*/
+    .btn9{
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom:640px;
+
+
+    }
+
+    /*상단 공지사항 버튼*/
+    .btn10{
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom:640px;
+
+
+    }
+
+
+
+    /*상단 글쓰기 버튼*/
+    .btn12 {
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom: 640px;
+
+    }
+
+
+
+
+    /* 상단버튼 위치이동*/
+    .top{
+
+      position: relative;
+      left:938px;
+    }
+
+  </style>
+</head>
+<!--페이지 로드 시 스크롤을 맨 위로 이동 -->
+<body onload="adjustScrollPosition()">
+<!--로고 클릭시 메인 페이지 이동-->
+
+<a href="home">
+  <div class="imgclass">
+    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+</a>
+</div>
+
+
+
+<div class="all">
+  <form method="get" th:action="@{/gesi}">
+<div class="search">
+      <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요.">
+
+  </div>
+
+  <div>
+    <input type="submit" class="btn1" value="검색">
+  </div>
+  </form>
+  <div class="top">
+
+    <button class="btn10" onClick="location.href='notice'">공지사항</button>
+    <button class="btn12" onClick="location.href='gesizak'">글쓰기</button>
+    <button class="btn8" onClick="location.href='mypage'">마이페이지</button>
+    <button class="btn9" onClick="location.href='logout'">로그아웃</button>
+
+  </div>
+
+  <div class="total">
+    <h3>마이페이지</h3>
+
+
+
+
+
+    <!--나의 정보-->
+
+    <table>
+      <caption class="information">나의 정보</caption>
+      <thead>
+
+      <!--표 윗줄에 선 추가-->
+      <tr colspan="2" style="border-bottom: 2px solid black; ">&nbsp;</tr>
+
+      </thead>
+      <tbody>
+      <div th:each="mymember: ${memberList}">
+
+      <th>아이디</th>
+      <td class="id" th:text="${mymember.id}"></td>
+      </tr>
+      <tr>
+        <th>닉네임</th>
+        <td class="nickname"  th:text="${mymember.nickname}"></td>
+      </tr>
+      <tr>
+        <th>이름</th>
+        <td class="name" th:text="${mymember.name}"></td>
+      </tr>
+      <tr>
+        <th>전화번호</th>
+        <td class="number" th:text="${mymember.Phone1+'-'+mymember.Phone2+'-'+mymember.Phone3}"></td>
+      </tr>
+      <tr>
+        <th>생년월일</th>
+        <td class="birth" th:text="${mymember.year+'-'+mymember.month+'-'+mymember.day}"></td>
+      </tr>
+      </div>
+      </tbody>
+    </table>
+
+
+
+
+    <div class="buttons">
+      <button class="btn4" onClick="location.href='information_change'">개인정보 변경</button>
+      <button class="btn5" onClick="location.href='withdrawal'">회원탈퇴 </button>
+
+    </div>
+
+    <!--내가 작성한 글 표-->
+    <table
+            class="sub_news"
+            border="1"
+            cellspacing="0"
+            summary="게시판의 글제목 리스트">
+      <caption class="wirte">내가 작성한 게시글</caption>
+
+
+
+
+
+      <colgroup>
+        <col />
+        <col width="110" />
+        <col width="100" />
+        <col width="80" />
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col">제목</th>
+        <th scope="col">작성일</th>
+        <th scope="col">조회수</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <div th:each="myboard: ${boardList}">
+        <tr>
+          <td class="title">
+            <a scope="col" style="color: blue" th:href="@{/view(id=${myboard.id})}" th:text="${myboard.title}"></a>
+          </td>
+          <td class="date" th:text="${myboard.date}"></td>
+          <td class="hit"></td>
+        </tr>
+      </div>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+</body>
+<a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
+</html>

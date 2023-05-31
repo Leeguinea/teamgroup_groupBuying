@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구칭구</title>
+
+    <style>
+        img{    
+            position: relative;
+            width: 135px;
+            height: 140px;
+            left: 420px;
+            top: 16px;
+
+        }
+
+        h2{
+
+            position: relative;
+            width: 400px;
+            height: 93px;
+            left: 515px;
+            bottom: 140px;
+
+            text-align: center;
+            font-size: 55pt;
+
+
+
+}
+        .p1{
+            position: relative;
+            bottom:130px;
+
+            text-align: center;
+             font-size: 35pt;
+        }
+
+        /*파일 업로드 버튼 css*/
+        input[type=file]::file-selector-button {
+            width:600px; 
+            height: 107px;
+            font-size: 40pt;
+
+
+            background: #fff;
+            border: 2px solid rgb(77,77,77);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .upload{
+            
+            position: absolute;
+            left: 30%;
+            top: 50%;
+        }
+           
+.btn{
+
+    font-weight:bold;
+        font-size: 30pt;
+    color:#fff;
+
+       
+
+        position: relative;
+        top: 150px;
+        left:40%;
+        border-radius: 20px;
+        
+    }
+           
+        
+    .p2{
+
+       
+        font-size: 20pt;
+        text-align: center;
+        color: #BABABA;
+
+
+        position: relative;
+    
+        bottom:240px;
+
+
+
+}
+
+
+        </style>
+
+</head>
+<body>
+    <img src="/Users/jeanmori/Desktop/3-1/soft/icon/face_logo.png">
+
+    <h2>파일 등록</h2>
+
+    <div class="p1">
+    <p>업로드 할 파일을 선택하세요.</p>
+    </div>
+    
+
+<div class ="upload">
+    <input type="file" name="file" id="file" accept=".png, .jpg, .pdf">
+</div>
+
+<div>
+<input type=button onclick="alert('등록이 완료되었습니다.')"class="btn" style="width:300px; height: 107px; background-color: #FDCE50;;";  value="등록"; >
+</div>
+
+<div class="p2">
+<p> 파일은 png, jpg, pdf 형식만 가능합니다. </p>
+</div>
+    
+</body>
+</html>

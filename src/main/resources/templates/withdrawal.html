@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구칭구</title>
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    <script>
+
+        //변수담기
+        function check(){
+            var id = document.getElementById("id");
+            var nickname = document.getElementById("pwd");
+            var selectBox = document.getElementById("eu");
+
+
+
+//공백검사
+            if(id.value==""){
+                alert("아이디를 입력하세요.");
+                id.focus(); //커서이동
+                return false;
+            }
+
+            if(pwd.value==""){
+                alert("비밀번호를 입력하세요.");
+                pwd.focus(); //커서이동
+                return false;
+            }
+
+
+            if( selectBox.value == ""){
+                alert("탈퇴사유를 선택해주세요.");
+                selectBox.focus(); //커서이동
+                return false;
+
+            }
+
+
+
+
+
+            else{
+                alert("탈퇴가 완료되었습니다.");
+            }
+
+//입력 값 전송(submit)
+            document.join.submit();
+        }
+
+
+
+
+
+    </script>
+    <style>
+
+        /*모바일 반응형*/
+        @media screen and (max-width:767px){
+
+            .all,.imgclass{
+                zoom:70%;
+                margin: 0 auto;
+
+
+            }
+
+        }
+
+        /*모든요소 중앙배열*/
+        .all{
+            width:1200px;
+            margin: 0 auto;
+
+        }
+
+        /*이미지 중앙배열*/
+        .imgclass{
+            width:1200px;
+            margin: 0 auto;
+        }
+
+        body{
+            zoom:70%;
+        }
+
+        img {
+            margin: auto;
+            display: block;
+            width: 500px;
+            height: 500px;
+
+            position: relative;
+            bottom: 150px;
+        }
+
+        /*아이디 입력창*/
+        .c1 {
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom: 300px;
+
+            margin: auto;
+            display: block;
+        }
+
+        /*비밀번호 입력창*/
+        .pwd{
+            position: relative;
+            bottom:40px;
+        }
+
+
+        /* 탈퇴사유 박스*/
+        .c2{
+
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom:60px;
+        }
+
+        input[type="text"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+
+        }
+
+        input[type="password"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+        }
+
+
+        /*취소버튼*/
+        .btn1 {
+            position: relative;
+            top: 150px;
+            right:100px;
+
+            width: 213px;
+            height: 69px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+            border: none;
+        }
+
+        /*탈퇴 버튼*/
+        .btn2 {
+            position: relative;
+            top: 150px;
+            background: #fdce50;
+
+            width: 213px;
+            height: 69px;
+            left:100px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+            border: none;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<!--로고 클릭시 메인 페이지 이동-->
+<a href="home.html">
+    <div class="imgclass">
+        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+</a>
+</div>
+<div class="all">
+
+<form method="post">
+    <div class="c1">
+        <div class="id">
+            <p>아이디</p>
+            <input
+                    type="text" class="id" id="id" stlye="width: 694px; height: 40px;">
+        </div>
+
+        <div class="pwd">
+            <p>비밀번호</p>
+            <input type="password" id="pwd" />
+        </div>
+
+        <div class="c2">
+            <p>탈퇴사유</p>
+            <div>
+
+                <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
+                    <option value="">사유를 선택해주세요</option>
+                    <option value="eu1">사이트가 불만족스러움</option>
+                    <option value="eu2">잘 사용하지 않음</option>
+                    <option value="eu3">재가입</option>
+                    <option value="eu4">기타</option>
+
+                </select>
+
+            </div>
+        </div>
+
+        <div class="button">
+            <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
+            <input
+                    type="submit"
+                    class="btn2"
+                    value="탈퇴"
+                    onclick="check();">
+            </div>
+    </div>
+</form>
+</div>
+
+</body>
+</html>
