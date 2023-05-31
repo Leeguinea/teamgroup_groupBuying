@@ -217,7 +217,7 @@
 </head>
 <body>
 <!--이미지 클릭시 메인 페이지 이동-->
-<a href="home">
+<a href="home.html">
   <div class=imgclass>
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
   </div>
@@ -238,16 +238,16 @@
   </form>
   <div class="top" th:if="${session.loginId != null}">
 
-    <button class="btn10" onClick="location.href='notice'">
+    <button class="btn10" onClick="location.href='notice.html'">
       공지사항
     </button>
-    <button class="btn12" onClick="location.href='gesizak'">
+    <button class="btn12" onClick="location.href='gesi_zak.html'">
       글쓰기
     </button>
-    <button class="btn8" onClick="location.href='mypage'">
+    <button class="btn8" onClick="location.href='mypage.html'">
       마이페이지
     </button>
-    <button class="btn9" onClick="location.href='logout'">
+    <button class="btn9" onclick="showAlert()" onClick="location.href='logout'">
       로그아웃</button>
   </div>
 

@@ -13,10 +13,8 @@
       window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
     }
 
-    <script>
-      function adjustScrollPosition() {
-      window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
-    }
+   
+     
 
 
       function showAlert() {
@@ -383,7 +381,7 @@
 <body onload="adjustScrollPosition()">
 <!--로고 클릭시 메인 페이지 이동-->
 
-<a href="home">
+<a href="home.html">
   <div class="imgclass">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
 </a>
@@ -404,10 +402,10 @@
   </form>
   <div class="top">
 
-    <button class="btn10" onClick="location.href='notice'">공지사항</button>
-    <button class="btn12" onClick="location.href='gesizak'">글쓰기</button>
-    <button class="btn8" onClick="location.href='mypage'">마이페이지</button>
-    <button class="btn9" onClick="location.href='logout'">로그아웃</button>
+    <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
+    <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
+    <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
+    <button class="btn9" onclick="showAlert()" onClick="location.href='logout'">로그아웃</button>
 
   </div>
 
@@ -458,8 +456,8 @@
 
 
     <div class="buttons">
-      <button class="btn4" onClick="location.href='information_change'">개인정보 변경</button>
-      <button class="btn5" onClick="location.href='withdrawal'">회원탈퇴 </button>
+      <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
+      <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
 
     </div>
 

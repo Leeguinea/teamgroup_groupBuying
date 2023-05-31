@@ -45,10 +45,10 @@
 
             else{
                 alert("탈퇴가 완료되었습니다.");
+                return true;
             }
 
-//입력 값 전송(submit)
-            document.join.submit();
+
         }
 
 
@@ -229,7 +229,7 @@
                     type="submit"
                     class="btn2"
                     value="탈퇴"
-                    onclick="check();">
+                    onclick="return check();">
             </div>
     </div>
 </form>
