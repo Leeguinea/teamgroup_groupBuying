@@ -6,6 +6,7 @@ import com.example.GroupBuying.entity.MemberEntity;
 import com.example.GroupBuying.service.BoardService;
 import com.example.GroupBuying.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -125,12 +126,6 @@ public class MemberController {
         return "redirect:/GroupBuying/" + memberDTO.getId();
     }
 
-    @GetMapping("/GroupBuying/delete/{id}")
-    public String deleteById(@PathVariable Long id) {
-        memberService.deleteById(id);
-        return "redirect:/GroupBuying/";
-    }
-
     @PostMapping("/GroupBuying/id-check")
     public @ResponseBody String idCheck(@RequestParam("id") String id) {
         System.out.println("id = " + id);
@@ -152,4 +147,18 @@ public class MemberController {
         memberService.update(memberDTO,loginId);
         return "redirect:/";
     }
+
+    //회원탈퇴 구현
+    @GetMapping("/withdrawal")
+    public String withdrawalForm() {
+        return "withdrawal";
+    }
+
+    @PostMapping("/withdrawal")
+    public String delete(@RequestParam("id") String id) {
+        memberService.deleteById(id);
+        return "redirect:/logout";
+    }
+
 }
+
