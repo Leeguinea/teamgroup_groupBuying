@@ -110,6 +110,7 @@
 
             else{
                 alert("가입이 완료되었습니다.");
+                return true;
             }
 
 //입력 값 전송(submit)
@@ -261,6 +262,7 @@
             height: 80px;
             margin: auto;
             display: block;
+            border:none;
 
             font-size:30pt;
             color:white;
@@ -286,14 +288,16 @@
         <!--이미지 클릭시 메인 페이지 이동-->
         <a href="home">
             <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
-
+            <div class="imgclass">  <!--수정-->
         </a>
+</div>
         <form method="post">
+            <div class="all">
             <div class="c1">
                 <div class="id">
                     <p>아이디</p>
                     <input
-                            type="text" name="id" class="id" stlye="width: 694px; height: 40px;" placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능 ."
+                            type="text" name="id" class="id" stlye="width: 694px; height: 40px;" placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능"
                             id = "id" onkeyup="idCheck()">
                     <p id="check-result" style="font-size: 40px;"></p>
 
@@ -307,7 +311,7 @@
 
                 <div class="pwd">
                     <p>비밀번호</p>
-                    <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/>
+                    <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능"/>
                 </div>
 
                 <div class="name">
@@ -373,7 +377,7 @@
             <div>
                 <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
             </div>
-
+            </div>
         </form>
 
         <script>

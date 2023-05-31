@@ -45,6 +45,7 @@
 
             else{
                 alert("탈퇴가 완료되었습니다.");
+                return true;
             }
 
 //입력 값 전송(submit)
@@ -194,45 +195,45 @@
 </div>
 <div class="all">
 
-<form method="post">
-    <div class="c1">
-        <div class="id">
-            <p>아이디</p>
-            <input
-                    type="text" class="id" id="id" stlye="width: 694px; height: 40px;">
-        </div>
+    <form method="post">
+        <div class="c1">
+            <div class="id">
+                <p>아이디</p>
+                <input
+                        type="text" class="id" id="id" stlye="width: 694px; height: 40px;">
+            </div>
 
-        <div class="pwd">
-            <p>비밀번호</p>
-            <input type="password" id="pwd" />
-        </div>
+            <div class="pwd">
+                <p>비밀번호</p>
+                <input type="password" id="pwd" />
+            </div>
 
-        <div class="c2">
-            <p>탈퇴사유</p>
-            <div>
+            <div class="c2">
+                <p>탈퇴사유</p>
+                <div>
 
-                <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
-                    <option value="">사유를 선택해주세요</option>
-                    <option value="eu1">사이트가 불만족스러움</option>
-                    <option value="eu2">잘 사용하지 않음</option>
-                    <option value="eu3">재가입</option>
-                    <option value="eu4">기타</option>
+                    <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
+                        <option value="">사유를 선택해주세요</option>
+                        <option value="eu1">사이트가 불만족스러움</option>
+                        <option value="eu2">잘 사용하지 않음</option>
+                        <option value="eu3">재가입</option>
+                        <option value="eu4">기타</option>
 
-                </select>
+                    </select>
 
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
+                <input
+                        type="submit"
+                        class="btn2"
+                        value="탈퇴"
+                        onclick="return check();">
             </div>
         </div>
-
-        <div class="button">
-            <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
-            <input
-                    type="submit"
-                    class="btn2"
-                    value="탈퇴"
-                    onclick="check();">
-            </div>
-    </div>
-</form>
+    </form>
 </div>
 
 </body>
