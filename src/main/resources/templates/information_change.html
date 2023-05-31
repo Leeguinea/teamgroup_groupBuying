@@ -66,6 +66,7 @@
 
             else{
                 alert("변경이 완료되었습니다.");
+                return true;
             }
 
             //입력 값 전송(submit)
@@ -304,14 +305,14 @@
 
             <div class="button">
                 <input type="button" class="btn2" value="취소" onClick="location.href='mypage'"/>
-                <!—sublmit이 아니라 button으로 처리—>
+
                 <input
-                        type="button"
+                        type="submit"
                         class="btn3"
                         value="변경"
-                        ;
-                        onclick="check();"
+                        onclick="return check();"
                 />
+
 
             </div>
     </div>
