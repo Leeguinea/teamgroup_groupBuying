@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구칭구</title>
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    <style>
+
+        .all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+            width:100%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 검색창 */
+        .search {
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 검색 입력창 */
+        .search input[type="text"] {
+            width: 450px; /* 검색창의 너비를 조정 */
+            padding: 10px;
+            border: border box;
+            height: 30px;
+
+            border: 1px solid #6A6A6A;
+            border-radius: 5px;
+
+            outline: none;
+            font-size: 17.5px;
+        }
+
+        /* 검색 버튼 */
+        .search button[type="submit"] {
+            width:70px;
+            height: 50px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* 반응형 완성 */
+        .topnav-right {
+            position: absolute;
+            top: 9.5px;
+            right: 42.3px;
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .topnav-right a {
+            margin: 4px;
+            font-size: 11.5pt;
+            color: #888787;
+            text-decoration: none;
+        }
+
+        header {
+            height: 100px; /* header 높이 고정 */
+            position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .content {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        } .content2 {
+              margin: 20px;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+
+          }
+
+
+        .content p:nth-child(3) {
+            margin-bottom: 20px;
+        }
+        .content2 p:nth-child(3) {
+            margin-bottom: 20px;
+        }
+
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .content2 h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            margin-bottom: 10px;
+        }
+        .content2 p {
+            margin-bottom: 10px;
+        }
+
+        .content a {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .content2 a {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .content2 img {
+            display: block;
+            margin-bottom: 10px;
+            width: 300px;
+            height: 200px;
+        }
+
+        .content span {
+            font-weight: bold;
+        }
+        /*내용 span*/
+        .content2 span {
+            font-weight: bold;
+            font-size: 25px;
+        }
+        #user_id{
+            font-weight: normal;
+        }
+        #date {
+            position: absolute;
+
+            /* left: 0%;
+            transform: translate(-50%, -50%); */
+            font-weight: normal;
+        }
+        .content p:nth-child(3) {
+            margin-bottom: 40px;
+        }
+        .inline-container {
+            display: flex;
+        }
+
+        .inline-container p {
+            margin-right: 10px;
+        }
+        .chat{
+            color: rgb(103, 103, 103);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            /* Styles for screens larger than 768px */
+            .all{
+                width:auto;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:auto;
+                margin:auto;
+            }
+
+
+
+            .searchclass {
+
+                zoom:59%;
+            }
+            img{
+                display:none;
+
+            }
+
+        }
+
+
+        @media (min-width: 1024px) {
+            /* Styles for screens larger than 1024px */
+            .all{
+                width:1000px;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:1400px;
+                margin: 0 auto;
+            }
+
+
+
+            .submit input {
+                width: 100%;
+                height: 75%;
+            }
+            img{
+                right: 100px;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="all">
+    <header>
+        <div class=imgclass>
+            <a href="home">
+                <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+            </a>
+        </div>
+        <div class="searchclass">
+            <div class="search">
+                <input type="text" placeholder="공동구매 검색어를 입력하세요.">
+                <button type="submit">검색</button>
+            </div>
+            <div class="topnav-right">
+                <a href="notice">공지사항</a>
+                <a href="gesizak">글쓰기</a>
+                <a href="mypage">마이페이지</a>
+                <a href="logout" onclick="showAlert()">로그아웃</a>
+                <script>
+                    function showAlert() {
+                        alert("로그아웃 되었습니다.");
+                    }
+                </script>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <p ><span id="user_id" th:text="${'(닉네임) ' + board.member.nickname}" style="color: blue; font-size: 13px;"></span>
+        </p>
+        <h1 th:text="${'(제목)'+board.title}"> </h1>
+
+
+        <p><span id="date" th:text="${'(날짜) ' + board.date}" style="float:right;"></span> </p>
+
+
+    </div>
+    <div th:each="board : ${board}">
+    <div class="content2">
+        <div th:if="${imageSrc != null}">
+            <img th:src="@{|${imageSrc}|}" style="width: 300px; height: 200px;">
+        </div>
+        <div>
+            <a th:href="${board.link}"><p th:text="${board.link}"></p></a>
+
+
+        </div>
+
+        <div class="inline-container">
+            <p th:text="${board.category+ ' / ' }"> <span id="category"></span></p>
+            <p th:text="${board.item+ ' / ' }"><span id="item"></span></p>
+            <p th:text="${board.recruitment+ '명'}"> <span id="person"></span></p>
+
+
+        </div>
+
+
+        <br>
+        <p><span id="content">내용</span></p>
+        <p th:text="${board.content}"></p>
+    </div>
+</div>
+</body>
+</html>

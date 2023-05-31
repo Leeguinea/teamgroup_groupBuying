@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구칭구</title>
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    <style>
+
+        body {
+            /* margin-top: 130px; */
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+
+        .all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+            width:100%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        img {
+            max-width: auto;
+            height: auto;
+        }
+
+        /* 검색창 */
+        .search {
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 검색 입력창 */
+        .search input[type="text"] {
+            width: 450px; /* 검색창의 너비를 조정 */
+            padding: 10px;
+            border: border box;
+            height: 30px;
+
+            border: 1px solid #6A6A6A;
+            border-radius: 5px;
+
+            outline: none;
+            font-size: 17.5px;
+        }
+
+        /* 검색 버튼 */
+        .search button[type="submit"] {
+            width:70px;
+            height: 50px;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* 반응형 완성 */
+        .topnav-right {
+            position: absolute;
+            top: 9.5px;
+            right: 42.3px;
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .topnav-right a {
+            margin: 4px;
+            font-size: 11.5pt;
+            color: #888787;
+            text-decoration: none;
+        }
+
+        header {
+            height: 100px; /* header 높이 고정 */
+            position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .post-gesi {
+            position: relative;
+            left: 70px;
+            top: 0px;
+        }
+        .post-form {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-title{
+            margin: 10px auto;
+
+        }
+
+        .post-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+
+        }
+
+        .post-form input[type="text"], .post-form input[type="number"], .post-form select, .post-form textarea {
+            width: 100%;
+            padding: 0%;
+
+        }
+        .post-content{
+            margin: 10px auto;
+
+        }
+        .post-category, .post-items {
+            display: inline-block;
+            width: 45%;
+            margin: 10px auto;
+
+        }
+        .post-items {
+            margin-left: 9.3%;
+        }
+        .post-recruitment {
+            width: 44.4%;
+        }
+        .post-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cancel-button {
+            background-color: #f7c111;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 7px;
+        }
+
+        .submit-button {
+            background-color: #f7c111;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 7px;
+
+        }
+
+
+        #cancel:hover, #submit:hover {
+            background-color: yellow;
+            color: white;
+            cursor: pointer;
+        }
+        #content {
+            font-family: "맑은 고딕", Arial, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            /* Styles for screens larger than 768px */
+            .all{
+                width:auto;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:auto;
+                margin:auto;
+            }
+
+
+
+            .searchclass {
+
+                zoom:59%;
+            }
+            img{
+                display:none;
+
+            }
+
+        }
+
+
+        @media (min-width: 1024px) {
+            /* Styles for screens larger than 1024px */
+            .all{
+                width:1000px;
+                margin: 0 auto;
+
+            }
+
+            .imgclass{
+                width:1400px;
+                margin: 0 auto;
+            }
+
+
+
+            .submit input {
+                width: 100%;
+                height: 75%;
+            }
+            img{
+                right: 100px;
+            }
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>게시글 작성</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="all">
+    <header>
+        <div class=imgclass>
+            <a href="home">
+                <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+            </a>
+        </div>
+        <div class="searchclass">
+            <div class="search">
+                <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요.">
+                <button type="submit">검색</button>
+            </div>
+
+            <div class="topnav-right">
+                <a href="notice">공지사항</a>
+                <a href="gesizak">글쓰기</a>
+                <a href="mypage">마이페이지</a>
+                <a href="logout" onclick="showAlert()">로그아웃</a>
+                <script>
+                    function showAlert() {
+                        alert("로그아웃 되었습니다.");
+                    }
+                </script>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form action="/gesizak" method="post" onsubmit="return handleSubmit();" enctype="multipart/form-data">
+
+        <div class="post-gesi">
+                <h1 style="font-weight: bold; font-size: 30px;">게시글 작성</h1></div>
+
+        <div class="post-form">
+
+            <div class="post-title">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div class="post-link">
+                <label for="link">오픈채팅방 링크</label>
+                <input type="text" id="link" name="link">
+            </div>
+
+            <div class="post-category">
+                <label for="category">카테고리</label>
+                <select id="category" name="category">
+                    <option value="육류">육류</option>
+                    <option value="과일">과일</option>
+                    <option value="어류">어류</option>
+                    <option value="장류/소스">장류/소스</option>
+                    <option value="과자">과자</option>
+                    <option value="생수">생수</option>
+                    <option value="음료">음료</option>
+                    <option value="밀가루/쿠킹믹스">밀가루/쿠킹믹스</option>
+                    <option value="조미료">조미료</option>
+                    <option value="냉동식품">냉동식품</option>
+                    <option value="국/반찬">국/반찬</option>
+                    <option value="기타">기타</option>
+
+
+
+                </select>
+            </div>
+
+            <div class="post-items">
+                <label for="item">품목</label>
+                <input type="text" id="item" name="item">
+            </div>
+
+            <div class="post-recruitment">
+                <label for="recruitment">모집인원</label>
+                <input type="number" id="recruitment" name="recruitment" placeholder="숫자를 입력해주세요.">
+            </div>
+
+            <div class="post-content">
+                <label for="content">내용</label>
+                <textarea rows="8" textarea id="content" name="content"
+
+                ></textarea><p style="color: red">"거래시간, &#13;&#10;거래장소, &#13;&#10;결제방식,&#13;&#10;&#13;&#10;품목에 대한 설명을 자유롭게 써주세요. &#13;&#10;&#13;&#10;위 사항을 지키지 않아 발생하는 문제는 책임지지 않습니다."</p>
+            </div>
+
+
+
+
+            <div class="post-image">
+                <label for="image">사진 첨부하기</label>
+                <input type="file" id="image" name="boardFile">
+            </div>
+
+            <!-- <div class="post-buttons">
+              <button type="button" id="cancel">취소</button>
+              <input type="submit" value="등록">
+            </div> -->
+
+        </div>
+    </main>
+
+
+        <!-- 입력 요소들 -->
+
+        <div class="post-buttons">
+            <button type="button" class="cancel-button">취소</button>
+            <input type="submit" value="등록" class="submit-button">
+        </div>
+    </form>
+
+    <script>
+        // 등록 버튼 클릭 이벤트 핸들러
+        function handleSubmit() {
+            // 유효성 검사 수행
+            if (validateForm()) {
+                // 폼이 유효한 경우, 등록 처리를 창
+                alert("게시글이 등록되었습니다.");
+                return true;
+            } else {
+                // 폼이 유효하지 않은 경우, 등록을 중단합니다.
+                return false;
+            }
+        }
+
+        // 유효성 검사 함수이다
+        function validateForm() {
+            var title = document.getElementById("title");
+            var link = document.getElementById("link");
+            var category = document.getElementById("category").value;
+            var item = document.getElementById("item").value;
+            var recruitment = document.getElementById("recruitment").value;
+            var content = document.getElementById("content").value;
+
+
+
+            if (title.value === "") {
+                alert("제목을 입력해주세요.");
+                title.focus();
+                return false;
+            }
+
+            if (link.value === "") {
+                alert("오픈채팅방 링크를 입력해주세요.");
+                link.focus();
+                return false;
+            }
+
+            if (category === "") {
+                alert("카테고리를 선택해주세요.");
+                document.getElementById("category").focus();
+                return false;
+            }
+
+            if (item === "") {
+                alert("품목을 입력해주세요.");
+                document.getElementById("item").focus();
+                return false;
+            }
+
+            if (recruitment === "") {
+                alert("모집인원을 입력해주세요.");
+                document.getElementById("recruitment").focus();
+                return false;
+            }
+
+            if (content === "") {
+                alert("내용을 입력해주세요.");
+                document.getElementById("content").focus();
+                return false;
+            }
+
+
+
+            // 유효성 검사 통과이다
+            return true;
+        }
+
+    </script>
+
+
+
+
+
+
+</div>
+</body>
+</html>

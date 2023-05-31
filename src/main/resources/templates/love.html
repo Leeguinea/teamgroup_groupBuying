@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>공구칭구</title>
+
+  <style>
+    img {
+      position: relative;
+      left: 0px;
+      bottom: 180px;
+    }
+    /*검색창*/
+    .search {
+      position: relative;
+      bottom: 460px;
+      left: 550px;
+
+      align-items: center;
+    }
+
+    /*검색창 사이즈*/
+    .search input[type="text"] {
+      width: 650px;
+      height: 50px;
+
+      padding: 10px;
+      border: 1px solid #6a6a6a;
+      border-radius: 5px;
+
+      font-size: 25px;
+    }
+
+    /* 검색 버튼 */
+    .btn1 {
+      background-color: #f7c111;
+      color: white;
+      border-radius: 5px;
+      border: none;
+
+      width: 100px;
+      height: 70px;
+      font-size: 23px;
+
+      position: relative;
+      bottom: 530px;
+      left: 1250px;
+    }
+
+    /*상단 마이페이지 버튼*/
+    .btn8 {
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom: 640px;
+      left: 1125px;
+    }
+
+    /*상단 로그아웃 버튼*/
+    .btn9 {
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom: 640px;
+      left: 1140px;
+    }
+
+    /*상단 공지사항 버튼*/
+    .btn10 {
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom: 640px;
+      left: 1105px;
+    }
+
+    /*상단 찜버튼*/
+    .btn11 {
+      color: #878787;
+      background-color: white;
+      font-size: 22px;
+      border: none;
+
+      position: relative;
+      bottom: 640px;
+      left: 1120px;
+    }
+
+    /* 상단 4개버튼 위치이동*/
+    .top {
+      position: relative;
+      right: 90px;
+    }
+
+    h2 {
+      font-size: 45pt;
+
+      position: relative;
+      left: 150px;
+      bottom: 510px;
+    }
+
+    /* 게시판 리스트 목록 */
+    .sub_news,
+    .sub_news th,
+    .sub_news td {
+      border: 0;
+    }
+
+    /*게시글 제목 하이퍼링크 색상*/
+    .sub_news a {
+      color: #383838;
+      text-decoration: none;
+    }
+
+    .sub_news {
+      width: 100%;
+      border-bottom: 1px solid #999;
+      color: #666;
+      font-size: 12px;
+      table-layout: fixed;
+    }
+
+
+    .sub_news th {
+      padding: 5px 0 6px;
+      border-top: solid 1px #999;
+      border-bottom: solid 1px #b2b2b2;
+      background-color: #f1f1f4;
+      color: #333;
+      font-weight: bold;
+      line-height: 20px;
+      vertical-align: top;
+    }
+
+    .sub_news td {
+      padding: 8px 0 9px;
+      border-bottom: solid 1px #d2d2d2;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    /*게시글 날짜, 조회수*/
+    .sub_news .date,
+    .sub_news .hit {
+      padding: 0;
+      font-family: Tahoma;
+      font-size: 11px;
+      line-height: normal;
+    }
+
+    /*게시글 제목*/
+    .sub_news .title {
+      text-align: left;
+      padding-left: 15px;
+      font-size: 13px;
+    }
+    /*여백설정*/
+    .sub_news .title .pic,
+    .sub_news .title .new {
+      margin: 0 0 2px;
+      vertical-align: middle;
+    }
+
+    table{
+
+      position: relative;
+      bottom:500px;
+    }
+
+
+  </style>
+</head>
+<body>
+<!--이미지 클릭시 메인 페이지 이동-->
+<a href="home">
+  <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+</a>
+
+<form method="get" th:action="@{/gesi}">
+  <div class="search">
+    <input type="text" placeholder="공동구매 할 검색어를 입력하세요." name="searchKey"/>
+  </div>
+
+  <div>
+    <input type="submit" class="btn1" value="검색" />
+  </div>
+</form>
+<div class="top">
+  <button class="btn10" onClick="location.href='gongi'">
+    공지사항
+  </button>
+  <button class="btn11" onClick="location.href='jjim'">
+    내가 작성한 게시글
+  </button>
+  <button class="btn8" onClick="location.href='mypage'">
+    마이페이지
+  </button>
+  <button class="btn9" onClick="location.href='logout'">
+    로그아웃</button>
+</div>
+
+<h2>내가 작성한 게시글</h2>
+
+<!--게시판-->
+
+<table
+        class="sub_news"
+        border="1"
+        cellspacing="0"
+        summary="게시판의 글제목 리스트"
+>
+
+  <colgroup>
+    <col />
+    <col width="110" />
+    <col width="100" />
+    <col width="80" />
+  </colgroup>
+  <thead>
+  <tr>
+    <th scope="col">제목</th>
+    <th scope="col">작성자</th>
+    <th scope="col">작성일</th>
+    <th scope="col">조회수</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <div th:each="myboard: ${boardList}">
+    <tr>
+      <td class="title">
+        <a scope="col" th:href="@{/view(id=${myboard.id})}" th:text="${myboard.title}"></a>
+      </td>
+      <td class="name" th:text="${myboard.member.nickname}"></td>
+      <td class="date" th:text="${myboard.date}"></td>
+      <td class="hit"></td>
+    </tr>
+  </div>
+  </tbody>
+</table>
+</body>
+<a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
+</html>
