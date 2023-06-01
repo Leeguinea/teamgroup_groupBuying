@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,56 +28,54 @@
 
 
 //공백검사
-            if(id.value==""){
-                alert("아이디를 입력하세요.");
-                id.focus(); //커서이동
+            if (id == null || id.trim().isEmpty()) {
+                System.out.println("아이디를 입력하세요.");
                 return false;
-            }
 
-            if(nickname.value==""){
+            if(nickname.value.equals("")){
                 alert("닉네임을 입력하세요.");
                 nickname.focus(); //커서이동
                 return false;
             }
 
-            if(pwd.value==""){
+            if(pwd.value.equals("")){
                 alert("비밀번호를 입력하세요.");
                 pwd.focus(); //커서이동
                 return false;
             }
 
-            if(name.value==""){
+            if(name.value.equals("")){
                 alert("이름을 입력하세요.");
                 name.focus(); //커서이동
                 return false;
             }
 
-            if(phone1.value==""){
+            if(phone1.value.equals("")){
                 alert("전화번호를 입력하세요.");
                 phone1.focus(); //커서이동
                 return false;
             }
 
-            if(phone2.value==""){
+            if(phone2.value.equals("")){
                 alert("전화번호를 입력하세요.");
                 phone2.focus(); //커서이동
                 return false;
             }
 
-            if(phone3.value==""){
+            if(phone3.value.equals("")){
                 alert("전화번호를 입력하세요.");
                 phone3.focus(); //커서이동
                 return false;
             }
 
-            if(year.value==""){
+            if(year.value.equals("")){
                 alert("년도를 입력하세요.");
                 year.focus(); //커서이동
                 return false;
             }
 
 
-            if(selectBox.value==""){
+            if(selectBox.value.equals("")){
                 alert("월을 선택하세요.");
                 selectBox.focus(); //커서이동
                 return false;
@@ -85,7 +83,7 @@
 
 
 
-            if(day.value==""){
+            if(day.value.equals("")){
                 alert("일을 입력하세요.");
                 day.focus(); //커서이동
                 return false;
@@ -113,8 +111,7 @@
                 return true;
             }
 
-//입력 값 전송(submit)
-            document.join.submit();
+
 
         }
 
@@ -375,31 +372,12 @@
             </div>
 
             <div>
-                <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
+                <input type="submit" class="btn2" value="가입하기";  onclick="return check();"/>
             </div>
             </div>
         </form>
 
-        <script>
-            function checkUserId() {
-                const id = document.getElementsByName("id");
-                const nickname = document.getElementsByName('nickname');
-                const pwd = document.getElementsByName('pwd');
-                const name = document.getElementsByName('name');
-                const phone1 = document.getElementsByName('phone1');
-                const phone2 = document.getElementsByName('phone2');
-                const phone3 = document.getElementsByName('phone3');
-                const year = document.getElementsByName('year');
-                const month = document.getElementsByName('month');
-                const day = document.getElementsByName('day');
 
-                if (!id) {
-                    alert('모든 입력란을 채워주세요!');
-                    return false;
-                }
-            }
-
-        </script>
 </body>
 <script th:inline="javascript">
     const idCheck = () => {
