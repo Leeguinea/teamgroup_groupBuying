@@ -7,7 +7,7 @@
     <title>공구칭구</title>
 
     <!--탭 로고-->
-    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+    <link rel="icon" href="https://github.com/Leeguinea/teamgroup_groupBuying/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
@@ -28,54 +28,56 @@
 
 
 //공백검사
-            if (id == null || id.trim().isEmpty()) {
-                System.out.println("아이디를 입력하세요.");
+            if(id.value==""){
+                alert("아이디를 입력하세요.");
+                id.focus(); //커서이동
                 return false;
+            }
 
-            if(nickname.value.equals("")){
+            if(nickname.value==""){
                 alert("닉네임을 입력하세요.");
                 nickname.focus(); //커서이동
                 return false;
             }
 
-            if(pwd.value.equals("")){
+            if(pwd.value==""){
                 alert("비밀번호를 입력하세요.");
                 pwd.focus(); //커서이동
                 return false;
             }
 
-            if(name.value.equals("")){
+            if(name.value==""){
                 alert("이름을 입력하세요.");
                 name.focus(); //커서이동
                 return false;
             }
 
-            if(phone1.value.equals("")){
+            if(phone1.value==""){
                 alert("전화번호를 입력하세요.");
                 phone1.focus(); //커서이동
                 return false;
             }
 
-            if(phone2.value.equals("")){
+            if(phone2.value==""){
                 alert("전화번호를 입력하세요.");
                 phone2.focus(); //커서이동
                 return false;
             }
 
-            if(phone3.value.equals("")){
+            if(phone3.value==""){
                 alert("전화번호를 입력하세요.");
                 phone3.focus(); //커서이동
                 return false;
             }
 
-            if(year.value.equals("")){
+            if(year.value==""){
                 alert("년도를 입력하세요.");
                 year.focus(); //커서이동
                 return false;
             }
 
 
-            if(selectBox.value.equals("")){
+            if(selectBox.value==""){
                 alert("월을 선택하세요.");
                 selectBox.focus(); //커서이동
                 return false;
@@ -83,11 +85,12 @@
 
 
 
-            if(day.value.equals("")){
+            if(day.value==""){
                 alert("일을 입력하세요.");
                 day.focus(); //커서이동
                 return false;
             }
+
 
 
 //아이디 규정
@@ -109,6 +112,7 @@
             else{
                 alert("가입이 완료되었습니다.");
                 return true;
+
             }
 
 
