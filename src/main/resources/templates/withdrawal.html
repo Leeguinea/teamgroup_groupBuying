@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -192,19 +192,19 @@
         <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
 </a>
 </div>
-<div class="all">
 
-<form method="post">
+<div class="all">
+<form action= "/withdrawal"  method="post">
     <div class="c1">
         <div class="id">
             <p>아이디</p>
             <input
-                    type="text" class="id" id="id" stlye="width: 694px; height: 40px;">
+                    type="text" class="id" name="id" stlye="width: 694px; height: 40px;">
         </div>
 
         <div class="pwd">
             <p>비밀번호</p>
-            <input type="password" id="pwd" />
+            <input type="password" name="currentPwd" />
         </div>
 
         <div class="c2">
@@ -229,7 +229,7 @@
                     type="submit"
                     class="btn2"
                     value="탈퇴"
-                    onclick="check();">
+                    onClick="location.href='@{|/GroupBuying/delete/${member.id}|}'" >
             </div>
     </div>
 </form>

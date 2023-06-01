@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -90,9 +91,7 @@ public class MemberService {
         memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
     }
 
-    public void deleteById(Long id) {
-        memberRepository.deleteById(id);
-    }
+
 
     public String idCheck(String id) {
         Optional<MemberEntity> byId = memberRepository.findById(id);
@@ -125,6 +124,10 @@ public class MemberService {
         } else {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
+    }
+    @Transactional
+    public void deleteById(String id) {
+        memberRepository.deleteById(id);
     }
 }
 
