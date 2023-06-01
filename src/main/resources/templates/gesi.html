@@ -222,6 +222,7 @@ function toggleFavorite() {
                 <a href="/gesizak">글쓰기</a>
                 <a href="/mypage">마이페이지</a>
                 <a href="/logout" onclick="showAlert()">로그아웃</a>
+                <a th:text="${session.loginId}"></a>
                 <script>
                     function showAlert() {
                         alert("로그아웃 되었습니다.");

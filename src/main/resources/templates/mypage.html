@@ -393,14 +393,14 @@
 
 <div class="all">
   <form method="get" th:action="@{/gesi}">
-<div class="search">
+    <div class="search">
       <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요.">
 
-  </div>
+    </div>
 
-  <div>
-    <input type="submit" class="btn1" value="검색">
-  </div>
+    <div>
+      <input type="submit" class="btn1" value="검색">
+    </div>
   </form>
   <div class="top">
 
@@ -431,25 +431,25 @@
       <tbody>
       <div th:each="mymember: ${memberList}">
 
-      <th>아이디</th>
-      <td class="id" th:text="${mymember.id}"></td>
-      </tr>
-      <tr>
-        <th>닉네임</th>
-        <td class="nickname"  th:text="${mymember.nickname}"></td>
-      </tr>
-      <tr>
-        <th>이름</th>
-        <td class="name" th:text="${mymember.name}"></td>
-      </tr>
-      <tr>
-        <th>전화번호</th>
-        <td class="number" th:text="${mymember.Phone1+'-'+mymember.Phone2+'-'+mymember.Phone3}"></td>
-      </tr>
-      <tr>
-        <th>생년월일</th>
-        <td class="birth" th:text="${mymember.year+'-'+mymember.month+'-'+mymember.day}"></td>
-      </tr>
+        <th>아이디</th>
+        <td class="id" th:text="${mymember.id}"></td>
+        </tr>
+        <tr>
+          <th>닉네임</th>
+          <td class="nickname"  th:text="${mymember.nickname}"></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td class="name" th:text="${mymember.name}"></td>
+        </tr>
+        <tr>
+          <th>전화번호</th>
+          <td class="number" th:text="${mymember.Phone1+'-'+mymember.Phone2+'-'+mymember.Phone3}"></td>
+        </tr>
+        <tr>
+          <th>생년월일</th>
+          <td class="birth" th:text="${mymember.year+'-'+mymember.month+'-'+mymember.day}"></td>
+        </tr>
       </div>
       </tbody>
     </table>
