@@ -8,16 +8,20 @@
     <!--탭 로고-->
     <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
     <style>
-        .all{
-            width:980px;
+
+          .all{
+            width:90%;
+
             margin: 0 auto;
 
         }
 
-        .imgclass{
-            width:1000px;
-            margin: 0 auto;
-        }
+
+    .imgclass{
+        width:100%;
+        margin: 0 auto;
+    }
+
 
         header {
             background-color: #ffffff;
@@ -30,7 +34,7 @@
             max-width: 100%;
             height: auto;
         }
-
+        
         /* 검색창 */
         .search {
             position: absolute;
@@ -85,26 +89,19 @@
         }
 
 
-        .buuu {
+        /* .buuu {
 
-            text-align: center; /* 가운데 정렬 */
-        }
+            text-align: center; 
+        } */
 
-        .buuu a {
+        /* .buuu a {
             display: inline-block;
             background-color: #f7c111;
             color: white;
             padding: 20px;
             margin: 30px;
-            position: relative;
-
-            left: 230px;
-            top: 220px;
-            width: 170px;
-            height: 20px;
-            text-decoration: none;
-            border-radius: 10px; /* 박스의 모서리를 둥글게 만듬 */
-        }
+            position: relative;}
+         */
 
         .slideshow-container {
             position: relative;
@@ -119,7 +116,7 @@
 
         .mySlides img {
             width: 100%;
-            height: 230px;
+            height: 300px;
         }
 
         /* section.icon{
@@ -203,22 +200,64 @@
 
         /*하단 안내문구*/
         .hadangul{
-            background-color: #888787;
+            background-color: #323232;
         }
 
         .tip{
             border: 5px solid #f9a304;
             text-align: center;
-            margin-bottom: 200px;
+            margin-bottom: 130px;
 
 
         }
 
         .hadan_p{
-            color:rgb(198, 197, 197);
+            color:rgb(255, 255, 255);
             font-size: 10px;
             margin-top: 50px;
         }
+        .event{
+            width:100%;
+            margin: 0 auto;
+            
+            
+        }
+        .event-image {
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+        }
+
+
+       /*표 css*/
+        .image-table {
+            display: table;
+            width:80%;
+            margin: 0 auto;
+            table-layout: fixed;
+            margin-bottom: 80px;
+            
+        }
+
+        .image-row {
+            display: table-row;
+        }
+
+        .image-cell {
+            display: table-cell;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-cell img {
+            max-width: 100%;
+            height: auto;
+        }
+        .maket{
+            zoom:70%;
+        }
+
         @media (max-width: 768px) {
 
 
@@ -232,6 +271,13 @@
             }
 
         }
+        @media (min-width: 1024px) {
+        
+            .search,.topnav-right {
+            margin-right: 53px; /* 오른쪽 마진 추가 */
+            }
+            }
+
 
         @media (min-width: 1024px) {
 
@@ -245,8 +291,11 @@
 <body>
     <div class="all">
 <header>
+
+    <div class="header-container">
     <div class=imgclass>
-        <img class="logo" src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: relative; top: 20px; left: -25px; width: 361px; height: 74.5px;">
+    <img class="logo" src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: relative; top: 20px; left: -25px; width: 361px; height: 74.5px;">
+
     <div class="searchclass">
     </div>
         <div class="search">
@@ -272,6 +321,7 @@
             </th:if>
         </div>
     </div>
+</div>
 </header>
 
 <main>
@@ -337,7 +387,9 @@
     <div class="icon">
         <div class="icon-item">
             <a href="/notice">
-                <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/noti.png" alt="아이콘1" style="position: relative; top: 20px; left: 12px; width: 130px;">
+
+                <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/noti.png" alt="아이콘1" style="position: relative; top: 20px; left: 120px; width: 130px;">
+
                 <!-- <p class="gongi_p">공지사항</p> -->
             </a>
         </div>
@@ -349,13 +401,24 @@
         </div>
         <div class="icon-item">
             <a href="/gesi">
-                <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/geba.png" alt="아이콘3" style="position: relative; top: 20px; left: 0px; width: 130px;">
+
+                <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/geba.png" alt="아이콘3" style="position: relative; top: 20px; left: -100px; width: 130px;">
+
                 <!-- <p class="pan_p">게시판 바로가기</p> -->
             </a>
         </div>
     </div>
-    </div>
+
 </main>
+
+
+
+
+
+ 
+
+
+
 
 
 <!-- <div class="buuu">
@@ -377,6 +440,58 @@
     </h5>
 </div>
 
+<!--온라인 몰 바로가기-->
+<div class="image-table">
+    <div class="image-row">
+        <div class="image-cell">
+           <a href="https://front.homeplus.co.kr/">
+            <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/homeplus.jpg" alt="홈플러스">
+       </a>
+  
+        </div>
+        <div class="image-cell">
+          <a href="https://emart.ssg.com/">
+            <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/emart.jpg" alt="이마트몰">
+      </a>
+          
+        </div>
+        <div class="image-cell">
+          <a href="https://www.coupang.com/np/categories/393760">
+            <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/coupang.png" alt="로켓프레시">
+            </a>
+          
+        </div>
+    </div>
+    <div class="image-row">
+        <div class="image-cell">
+        <a href="https://cookatmarket.com/?NaPm=ct%3Dlicps96h%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D3353994284fe4f7db847fc19ef6e8558b39944a5">
+            <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/cookat.jpg" alt="쿠캣">
+            </a>
+
+          </div>
+        <div class="image-cell">
+          <a href="https://www.costco.co.kr/">
+            <img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/costco.jpg" alt="코스트코">
+       </a>
+         
+          </div>
+        <div class="image-cell">
+         <a href="https://www.kurly.com/main?NaPm=ct%3Dlicpokwv%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3Db5" alt="마켓컬리">
+            <img class="maket" src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/kurly.jpg" alt="마켓컬리">
+        </a>
+          </div>
+    </div>
+</div>
+
+
+<!--이벤트 배너 추가-->
+<div class="event">
+<a href="https://naver.me/F5FdlX7P">
+<img src="https://github.com/Leeguinea/teamgroup_groupBuying/raw/master/src/main/resources/static/image/event.jpg">
+</a>
+</div>
+
+
 <div class="hadangul">
     <p class="hadan_p">
         공구칭구는 커뮤니티를 제공할 뿐 판매의 당사자가 아닙니다.<br>
@@ -386,5 +501,6 @@
 
     </p>
 </div>
+</div>  
 </body>
 </html>
