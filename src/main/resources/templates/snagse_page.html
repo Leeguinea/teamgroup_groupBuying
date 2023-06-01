@@ -258,12 +258,12 @@
     </header>
 
     <div class="content">
-        <p ><span id="user_id" th:text="${'(닉네임) ' + board.member.nickname}" style="color: blue; font-size: 13px;"></span>
+        <p ><span id="user_id" th:text="${board.member.nickname}" style="color: blue; font-size: 13px;"></span>
         </p>
-        <h1 th:text="${'(제목)'+board.title}"> </h1>
+        <h1 th:text="${board.title}"> </h1>
 
 
-        <p><span id="date" th:text="${'(날짜) ' + board.date}" style="float:right;"></span> </p>
+        <p><span id="date" th:text="${board.date}" style="float:right;"></span> </p>
 
 
     </div>

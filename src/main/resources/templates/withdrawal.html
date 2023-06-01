@@ -45,6 +45,7 @@
 
             else{
                 alert("탈퇴가 완료되었습니다.");
+                return true;
             }
 
 //입력 값 전송(submit)
@@ -207,21 +208,22 @@
             <input type="password" name="currentPwd" />
         </div>
 
-        <div class="c2">
-            <p>탈퇴사유</p>
-            <div>
 
-                <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
-                    <option value="">사유를 선택해주세요</option>
-                    <option value="eu1">사이트가 불만족스러움</option>
-                    <option value="eu2">잘 사용하지 않음</option>
-                    <option value="eu3">재가입</option>
-                    <option value="eu4">기타</option>
+            <div class="c2">
+                <p>탈퇴사유</p>
+                <div>
 
-                </select>
+                    <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
+                        <option value="">사유를 선택해주세요</option>
+                        <option value="eu1">사이트가 불만족스러움</option>
+                        <option value="eu2">잘 사용하지 않음</option>
+                        <option value="eu3">재가입</option>
+                        <option value="eu4">기타</option>
 
+                    </select>
+
+                </div>
             </div>
-        </div>
 
         <div class="button">
             <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
