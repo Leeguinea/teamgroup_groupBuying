@@ -3,22 +3,41 @@ package com.example.GroupBuying.controller;
 import com.example.GroupBuying.dto.MemberDTO;
 import com.example.GroupBuying.entity.Board;
 import com.example.GroupBuying.entity.MemberEntity;
+import com.example.GroupBuying.kakaomodel.KakaoProfile;
+import com.example.GroupBuying.kakaomodel.OAuthToken;
 import com.example.GroupBuying.service.BoardService;
 import com.example.GroupBuying.service.MemberService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
+
 @Controller //MemberController 를 스프링 객체로 등록해주는 어노테이션
 @RequiredArgsConstructor
 public class MemberController {
+
+    //application.yml 에서 설정한 카카오 로그인을 위한 중요한 key를 주입받아오는 클래스
+    @Value("${cos.key}")
+    private String cosKey;
+
     //생성자 주입
     private final MemberService memberService;
     private final BoardService boardService;
@@ -158,6 +177,102 @@ public class MemberController {
     public String delete(@RequestParam("id") String id) {
         memberService.deleteById(id);
         return "redirect:/logout";
+    }
+
+    //카카오 로그인 데이터를 리턴해주는 함수
+    @GetMapping("/auth/kakao/callback")
+    public @ResponseBody String kakaoCallback(String code) {
+        //Post 방식으로 key=value 타입의 데이터 4가지를 카카오에 요청한다.
+        RestTemplate rt = new RestTemplate(); // 요청을 위해서 RestTemplate 라이브러리를 사용해야함.
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8"); //http body로 전송할 데이터가 key=value 형태의 데이터라고 header에 알려주는 역할
+
+        //HttpHeader 오브젝트 생성
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();//객체 하나 생성
+        params.add("grant_type","authorization_code"); //4가지 데이터를 key,value 형태로 입력.
+        params.add("client_id","63fb6c304c6f450819733f837983d4a9");
+        params.add("redirect_uri","http://localhost:8081/auth/kakao/callback");
+        params.add("code",code);
+
+        //HttpHeader와 HttpBody를 하나의 오브젝트에 담기.
+        HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest=  //엔티티 1개 생성.
+            new HttpEntity<>(params, headers);
+
+        // Http 요청하기 - Post 방식으로 , 그리고 response 변수의 응답을 받는다.
+        ResponseEntity<String> response = rt.exchange(
+                "https://kauth.kakao.com/oauth/token",
+                HttpMethod.POST,
+                kakaoTokenRequest,
+                String.class
+        );
+
+        // Gson,Json Simple, ObjectMapper
+        ObjectMapper objectMapper = new ObjectMapper();
+        OAuthToken oauthToken = null;
+        try {
+            oauthToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
+        } catch(JsonMappingException e) {
+            e.printStackTrace();
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("카카오 엑세스 토큰 : " + oauthToken.getAccess_token());
+
+        //사용자 정보 조회 요청
+        RestTemplate rt2 = new RestTemplate(); // 요청을 위해서 RestTemplate 라이브러리를 사용해야함.
+
+        HttpHeaders headers2 = new HttpHeaders();
+        headers2.add("Authorization", "Bearer "+oauthToken.getAccess_token());
+        headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8"); //http body로 전송할 데이터가 key=value 형태의 데이터라고 header에 알려주는 역할
+
+        //HttpHeader와 HttpBody를 하나의 오브젝트에 담기.
+        HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest2=  //엔티티 1개 생성.
+                new HttpEntity<>(headers2);
+
+        // Http 요청하기 - Post 방식으로 , 그리고 response 변수의 응답을 받는다.
+        ResponseEntity<String> response2 = rt2.exchange(
+                "https://kapi.kakao.com/v2/user/me",
+                HttpMethod.POST,
+                kakaoProfileRequest2,
+                String.class
+        );
+
+        ObjectMapper objectMapper2 = new ObjectMapper();
+        KakaoProfile kakaoProfile = null;
+        try {
+            kakaoProfile = objectMapper2.readValue(response2.getBody(), KakaoProfile.class);
+        } catch(JsonMappingException e) {
+            e.printStackTrace();
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        // User 오브젝트가 가지는 회원정보 3개 : nickname, pwd, id
+        System.out.println("카카오 아이디(번호) :" +kakaoProfile.getId());
+        System.out.println("카카오 이메일 :" +kakaoProfile.kakao_account.getEmail());
+
+        System.out.println("공구칭구서버 아이디 :" +kakaoProfile.getId());
+        System.out.println("공구칭구서버 닉네임 :" +kakaoProfile.getKakao_account().getEmail()+"_"+kakaoProfile.getId());
+        System.out.println("공구칭구서버 비밀번호 :" +cosKey);
+
+        //카카오톡 회원정보를 토대로 만든, 공구칭구서버의 회원정보 3가지로 강제로 로그인 시키기.
+
+        MemberDTO kakaoMemberDTO = MemberDTO.builder()
+                .id(kakaoProfile.getId().toString())
+                .nickname(kakaoProfile.getKakao_account().getEmail()+"_"+kakaoProfile.getId())
+                .pwd(cosKey)
+                .build();
+
+        //가입자 혹은 비가입자 체크 해서 처리
+        MemberDTO originMemberDTO = memberService.updateForm(kakaoMemberDTO.getId()); //회원찾기
+        if(originMemberDTO == null) {
+            System.out.println("기존 회원이 아니기에 자동 회원가입을 진행합니다.");
+            memberService.save(kakaoMemberDTO); //회원가입 진행
+            return "gesi";
+        }
+        //자동 로그인 처리
+        return "redirect:/gesi/";
     }
 
 }
