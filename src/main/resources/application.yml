@@ -21,5 +21,8 @@ spring:
     hibernate:
       ddl-auto: update
 
-#test9
+#카카오 로그인을 위해서 중요한 key임.
+cos:
+  key: cos1234
+
 

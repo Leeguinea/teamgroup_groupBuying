@@ -1,13 +1,13 @@
 package com.example.GroupBuying.service;
 
 //테스트용 주석
+
 import com.example.GroupBuying.dto.MemberDTO;
 import com.example.GroupBuying.entity.MemberEntity;
 import com.example.GroupBuying.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +17,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
+    
+    //회원가입
     public void save(MemberDTO memberDTO) { //Controller로 부터 DTO 객체를 받은 save 메소드
         // 조건. entity 객체를 DB로 넘겨주어한다.)
         // (1) dto -> entity 객체로 변환 ---> Entity 클래스에서 작업해준다.
