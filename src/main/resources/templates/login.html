@@ -12,220 +12,313 @@
             margin-top: -5%;
         }
         /* Common styles */
-.wrap {
-  position: relative;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 20px;
-}
+        .wrap {
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
 
-.login_id input,
-.login_pw input {
-  box-sizing: border-box;
-  width: 100%;
-  height: 70px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+        .login_id input,
+        .login_pw input {
+            box-sizing: border-box;
+            width: 100%;
+            height: 70px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-.submit input {
-  width: 100%;
-  height: 70px;
-}
+        .submit input {
+            width: 100%;
+            height: 70px;
+        }
 
-/* Responsive styles */
-@media (min-width: 769px) {
-  /* Styles for screens larger than 768px */
-  .wrap {
-    max-width: 500px;
-  }
+        /* Responsive styles */
+        @media (max-width: 769px) {
+            /* Styles for screens larger than 768px */
+            .wrap {
+                max-width: 500px;
+            }
 
-  .login_id input,
-  .login_pw input {
-    width: 100%;
-    height: 80px;
-  }
+            .login_id input,
+            .login_pw input {
+                width: 100%;
+                height: 80px;
+            }
 
-  .submit input {
-    width: 100%;
-    height: 90px;
-  }
-    img{
-        right: 0px;
-    }
-}
-        @media (max-width: 768px) {
-            img{
-                zoom: 70%;
-                margin-top: 80px;
+            .submit input {
+                width: 100%;
+                height: 90px;
+            }
+
+            img {
+                right: 0px;
+            }
+
+            .kakao_login img {
+                width: 100%;
+                height: 90px;
             }
         }
 
-@media (min-width: 1024px) {
-  /* Styles for screens larger than 1024px */
-  .wrap {
-    max-width: 700px;
-  }
+        /*@media (max-width: 768px) {*/
+        /*    img {*/
+        /*        zoom: 70%;*/
+        /*        margin-top: 80px;*/
+        /*    }*/
+        /*}*/
 
-  .login_id input,
-  .login_pw input {
-    width: 100%;
-      height: 65%;
-  }
 
-  .submit input {
-    width: 100%;
-      height: 75%;
-  }
-    img{
-        right: 100px;
-  }
-}
+        @media (min-width: 780px) {
+            /* Styles for screens larger than 1024px */
+            .wrap {
+                max-width: 700px;
+            }
 
-        img{
-            position: absolute;
-            width: 530px;
-            height: 101px;
-            /* left: 250px; */
-            margin-left: 100px;
-            top: 116px;
-            background: url(https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png);
-        }
+            .login_id input,
+            .login_pw input {
+                width: 100%;
+                height: 65%;
+            }
 
-        .login_id {
-            margin-top: 100px;
-            width: 80%;
-        }
+            .submit input {
+                width: 100%;
+                height: 75%;
+            }
 
-        .login_id input {
-            box-sizing: border-box;
+            img {
+                right: 100px;
+            }
 
-            position: absolute;
-            /* width: 517px;
+            .kakao_login img {
+                width: 728px;
+                height: 103px;
+                right: 0px;
+            }
+
+            .login_id input,
+            .login_pw input {
+                box-sizing: border-box;
+                width: 100%;
+                height: 70px;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .submit input {
+                width: 100%;
+                height: 70px;
+            }
+
+            /* Responsive styles */
+            @media (min-width: 769px) {
+                /* Styles for screens larger than 768px */
+                .wrap {
+                    max-width: 500px;
+                }
+
+                .login_id input,
+                .login_pw input {
+                    width: 100%;
+                    height: 80px;
+                }
+
+                .submit input {
+                    width: 100%;
+                    height: 90px;
+                }
+
+                img {
+                    right: 0px;
+                }
+            }
+            @media (max-width: 768px) {
+                img {
+                    zoom: 70%;
+                    margin-top: 80px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                /* Styles for screens larger than 1024px */
+                .wrap {
+                    max-width: 700px;
+                }
+
+                .login_id input,
+                .login_pw input {
+                    width: 100%;
+                    height: 65%;
+                }
+
+                .submit input {
+                    width: 100%;
+                    height: 75%;
+                }
+
+                img {
+                    right: 100px;
+                }
+            }
+
+            img {
+                position: absolute;
+                width: 530px;
+                height: 101px;
+                /* left: 250px; */
+                margin-left: 100px;
+                top: 116px;
+                background: url(https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png);
+            }
+
+            .login_id {
+                margin-top: 100px;
+                width: 80%;
+            }
+
+            .login_id input {
+                box-sizing: border-box;
+
+                position: absolute;
+                /* width: 517px;
             height: 93px;
             left: 250px; */
-            top: 290px;
+                top: 290px;
 
-            background: #FFFFFF;
-            border: 1px solid #000000;
-            border-radius: 20px;
+                background: #FFFFFF;
+                border: 1px solid #000000;
+                border-radius: 20px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 29px;
-        }
-        .input::placeholder{
-            position: absolute;
-            /* width: 139px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+            }
+
+            .input::placeholder {
+                position: absolute;
+                /* width: 139px;
             height: 29px;
             left: 250px; */
-            top: 405px;
+                top: 405px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 29px;
-            color: rgba(0, 0, 0, 0.6);
-        }
-        .login_pw {
-            margin-top: 20px;
-            width: 80%;
-        }
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+                color: rgba(0, 0, 0, 0.6);
+            }
 
-        .login_pw input {
-            box-sizing: border-box;
+            .login_pw {
+                margin-top: 20px;
+                width: 80%;
+            }
 
-            position: absolute;
-            /* width: 517px;
+            .login_pw input {
+                box-sizing: border-box;
+
+                position: absolute;
+                /* width: 517px;
             height: 93px;
             left: 250px; */
-            top: 400px;
+                top: 400px;
 
-            background: #FFFFFF;
-            border: 1px solid #000000;
-            border-radius: 20px;
+                background: #FFFFFF;
+                border: 1px solid #000000;
+                border-radius: 20px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 29px;
-        }
-        .login_etc {
-            position: absolute;
-            /* width: 307px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+            }
+
+            .login_etc {
+                position: absolute;
+                /* width: 307px;
             height: 24px;
             left: 250px; */
-            top: 583px;
+                top: 583px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 24px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
 
-            color: #000000;
-        }
-        .forgot_id {
-            position: absolute;
-            /* width: 100px;
+                color: #000000;
+            }
+
+            .forgot_id {
+                position: absolute;
+                /* width: 100px;
             height: 100px;
             left: 150px; */
-            top: 267px;
+                top: 267px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 24px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
 
-            color: #000000;
-        }
-        .forgot_pw {
-            position: absolute;
-            /* width: 317px;
+                color: #000000;
+            }
+
+            .forgot_pw {
+                position: absolute;
+                /* width: 317px;
             height: 24px;
             left: 520px; */
-            top: 850px;
+                top: 850px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 24px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
 
-            color: #000000;
-        }
-        .submit {
-            margin-top: 50px;
-            /* width: 80%; */
-        }
-        .submit input {
-            cursor: pointer;
+                color: #000000;
+            }
 
-            position: absolute;
-            /* width: 517px;
+            .submit {
+                margin-top: 50px;
+                /* width: 80%; */
+            }
+
+            .submit input {
+                cursor: pointer;
+
+                position: absolute;
+                /* width: 517px;
             height: 118px;
             left: 250px; */
-            top: 530px;
-            border: 0;
-            outline: none;
-            background: #F6C105;
-            border-radius: 20px;
+                top: 530px;
+                border: 0;
+                outline: none;
+                background: #F6C105;
+                border-radius: 20px;
 
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 48px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 48px;
 
-            color: #FFFDFD;
+                color: #FFFDFD;
 
+            }
+
+            .kakao_login {
+                position: absolute;
+                width: 100%;
+                height: 90px;
+                bottom: -500px; /* 원하는 위치로 조정 */
+            }
         }
-
 
 
 
@@ -237,7 +330,8 @@
     
     <div class="wrap">
         <a href="home">
-            <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" width="250" height="40">
+            <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png"
+                 alt="이미지1" width="250" height="40">
         </a>
 
         <div class="login">
@@ -249,64 +343,69 @@
             </div>
 
         </div>
-            <div class="login_etc">
-                <!-- <div class="checkbox">
-                    <input type="checkbox" name="" id=""> 아이디 저장하기
-                </div> -->
-                <!-- <div class="forgot_id">
-                    <a href=" https://example.com/id-recovery">아이디찾기</a>
-                </div>
-            </div>
-            <div class="forgot_pw">
-                <a href=" https://example.com/id-recovery">비밀번호 찾기</a>
+        <div class="login_etc">
+            <!-- <div class="checkbox">
+                <input type="checkbox" name="" id=""> 아이디 저장하기
             </div> -->
+            <!-- <div class="forgot_id">
+                <a href=" https://example.com/id-recovery">아이디찾기</a>
+            </div>
         </div>
-        
+        <div class="forgot_pw">
+            <a href=" https://example.com/id-recovery">비밀번호 찾기</a>
+        </div> -->
+        </div>
+
         <div class="submit">
-            <input type="submit" value="로그인" >
-        </div>
-        
+                    <input type="submit" value="로그인" >
+                </div>
+
+    <!--        카카오로그인 구현-->
+    <div class="kakao_login">
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=63fb6c304c6f450819733f837983d4a9&redirect_uri=http://localhost:8081/auth/kakao/callback&response_type=code">
+            <img src="/image/kakao_login_button.png" alt="카카오 로그인">
+            <!--                <img src="/image/kakao_login_button.png" alt="카카오 로그인" width="736px" height="105px">-->
+        </a>
+    </div>
+
         <script>
-        function showAlert(event) {
-    event.preventDefault(); // 기본 동작 방지
+            function showAlert(event) {
+                event.preventDefault(); // 기본 동작 방지
 
-    // 아이디 입력 필드 유효성 검사
-    var idField = document.getElementsByName("Id")[0];
-    var id = idField.value;
-    if (id === "") {
-        alert("아이디를 입력해주세요.");
-        idField.focus();
-        return;
-    }
+                // 아이디 입력 필드 유효성 검사
+                var idField = document.getElementsByName("Id")[0];
+                var id = idField.value;
+                if (id === "") {
+                    alert("아이디를 입력해주세요.");
+                    idField.focus();
+                    return;
+                }
 
-    // 비밀번호 입력 필드 유효성 검사
-    var pwdField = document.getElementsByName("pwd")[0];
-    var password = pwdField.value;
-    if (password === "") {
-        alert("비밀번호를 입력해주세요.");
-        pwdField.focus();
-        return;
-    }
+                // 비밀번호 입력 필드 유효성 검사
+                var pwdField = document.getElementsByName("pwd")[0];
+                var password = pwdField.value;
+                if (password === "") {
+                    alert("비밀번호를 입력해주세요.");
+                    pwdField.focus();
+                    return;
+                }
 
-    // 유효성 검사 통과, 로그인 처리 등 다음 단계로 진행
-    // 이곳에서 필요한 로직을 추가하면 됩니다.
+                // 유효성 검사 통과, 로그인 처리 등 다음 단계로 진행
+                // 이곳에서 필요한 로직을 추가하면 됩니다.
 
-    alert("로그인 완료되었습니다.");
-}
+                alert("로그인 완료되었습니다.");
+            }
 
-    </script>
-        
-        
+        </script>
+
+
     </div>
     </div>
 </form>
 
-        </div>
-    </div>
-    </div>
-
-
-
+</div>
+</div>
+</div>
 
 
 </form>
